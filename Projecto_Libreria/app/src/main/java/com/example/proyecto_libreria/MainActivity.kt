@@ -4,10 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.firebase.ml.naturallanguage.languageid.FirebaseLanguageIdentification
-import androidx.annotation.NonNull
 import android.util.Log
-import com.google.android.gms.tasks.OnFailureListener
-import com.google.android.gms.tasks.OnSuccessListener
+
 import com.google.firebase.ml.naturallanguage.FirebaseNaturalLanguage
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -26,11 +24,11 @@ class MainActivity : AppCompatActivity() {
     }
     fun irIntentRespuesta(){
         val intent= Intent(
-            this, NavigationActivity::class.java
+            this, LoginActivity::class.java
         )
 
         startActivity(intent);
-        finish()
+
     }
 
     fun identificarIdioma() {

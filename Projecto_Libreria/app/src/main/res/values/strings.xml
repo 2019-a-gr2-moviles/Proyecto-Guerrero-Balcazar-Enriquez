@@ -18,4 +18,22 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="title_activity_catalogo">CatalogoActivity</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="login_txt_titulo">Librería Sofía</string>
+    <string name="login_btn_ingresar">Ingresar</string>
+    <string name="login_txt_registro">¿No tiene usuario?, entonces</string>
+    <string name="login_btn_registro">Regístrese</string>
+    <string name="login_pltxt_usuario">Usuario</string>
+    <string name="login_pltxt_password">Contraseña</string>
+
 </resources>
