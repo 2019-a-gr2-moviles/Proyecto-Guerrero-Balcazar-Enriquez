@@ -1,4 +1,4 @@
-package com.example.projecto_libreria
+package com.example.proyecto_libreria
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
-        assertEquals("com.example.projecto_libreria", appContext.packageName)
+        assertEquals("com.example.proyecto_libreria", appContext.packageName)
     }
 }
