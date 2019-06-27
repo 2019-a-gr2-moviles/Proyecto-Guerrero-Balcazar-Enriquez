@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
     }
     fun irIntentRespuesta(){
         val intent= Intent(
-            this, MapsActivity::class.java
+            this, NavigationActivity::class.java
         )
 
         startActivity(intent);
