@@ -1,4 +1,4 @@
-package com.example.projecto_libreria
+package com.example.proyecto_libreria
 
 import org.junit.Test
 

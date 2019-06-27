@@ -6,7 +6,22 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b8e9136-1f0e-4970-9a85-7848dfca5cb7" name="Default Changelist" comment="" />
+    <list default="true" id="7b8e9136-1f0e-4970-9a85-7848dfca5cb7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Libreria/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/app/src/androidTest/java/com/example/projecto_libreria/ExampleInstrumentedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/java/com/example/projecto_libreria/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/app/src/test/java/com/example/projecto_libreria/ExampleUnitTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Libreria/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Libreria/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Libreria/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Libreria/gradlew" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,23 +41,31 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Projecto_Libreria/app/google-services.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-695" />
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
-    <option name="width" value="1940" />
-    <option name="height" value="1050" />
+    <option name="x" value="1913" />
+    <option name="width" value="878" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Scope 'Default Changelist'; set:Default Changelist; class com.intellij.packageDependencies.ChangeListScope" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -56,15 +79,21 @@
               <item name="Proyecto-Guerrero-Balcazar-Enriquez" type="462c0819:PsiDirectoryNode" />
               <item name="Projecto_Libreria" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Proyecto-Guerrero-Balcazar-Enriquez" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proyecto-Guerrero-Balcazar-Enriquez" type="462c0819:PsiDirectoryNode" />
+              <item name="Projecto_Libreria" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Projecto_Libreria" />
     <property name="not.eligible.for.single.variant.sync" value="true" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
@@ -156,10 +185,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="1912" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.3291474" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.36979166" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -184,5 +213,10 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/libreria/MainActivity.kt" />
+    <entry file="file://$PROJECT_DIR$/Projecto_Libreria/app/google-services.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-695" />
+      </provider>
+    </entry>
   </component>
 </project>
