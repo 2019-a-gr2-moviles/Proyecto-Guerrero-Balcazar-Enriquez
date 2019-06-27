@@ -1,13 +1,15 @@
 package com.example.proyecto_libreria
 
-import android.support.v7.app.AppCompatActivity
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.firebase.ml.naturallanguage.languageid.FirebaseLanguageIdentification
-import android.support.annotation.NonNull
+import androidx.annotation.NonNull
 import android.util.Log
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.ml.naturallanguage.FirebaseNaturalLanguage
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -16,14 +18,25 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         identificarIdioma()
+        btn_maps.setOnClickListener {
+            irIntentRespuesta()
+        }
 
 
+    }
+    fun irIntentRespuesta(){
+        val intent= Intent(
+            this, MapsActivity::class.java
+        )
+
+        startActivity(intent);
+        finish()
     }
 
     fun identificarIdioma() {
         val languageIdentifier: FirebaseLanguageIdentification = FirebaseNaturalLanguage.getInstance().languageIdentification
         val y:String="ls"
-        val x= languageIdentifier.identifyLanguage("hola")
+        val x= languageIdentifier.identifyLanguage("hello")
             .addOnSuccessListener { languageCode ->
                 if (languageCode !== "und") {
                     Log.i("1234", languageCode)

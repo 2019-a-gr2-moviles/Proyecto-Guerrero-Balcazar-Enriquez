@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Proyecto_Libreria</string>
+    <string name="title_activity_maps">Map</string>
 </resources>
