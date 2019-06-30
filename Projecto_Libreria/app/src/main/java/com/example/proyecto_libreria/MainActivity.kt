@@ -20,8 +20,6 @@ class MainActivity : AppCompatActivity() {
         login_btn_ingresar.setOnClickListener {
             irACatalogoActivity()
         }
-
-
     }
 
     fun irACatalogoActivity() {
@@ -43,6 +41,5 @@ class MainActivity : AppCompatActivity() {
                    Log.i("1234", languageCode)
                 }
             }
-
     }
 }
