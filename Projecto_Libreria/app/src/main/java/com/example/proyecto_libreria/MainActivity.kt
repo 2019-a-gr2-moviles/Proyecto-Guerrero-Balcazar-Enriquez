@@ -16,20 +16,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         identificarIdioma()
-        btn_maps.setOnClickListener {
-            irIntentRespuesta()
+
+        login_btn_ingresar.setOnClickListener {
+            irACatalogoActivity()
         }
 
 
     }
-    fun irIntentRespuesta(){
+
+    fun irACatalogoActivity() {
         val intent= Intent(
-            this, LoginActivity::class.java
+            this, CatalogoActivity::class.java
         )
-
         startActivity(intent);
-
     }
+
 
     fun identificarIdioma() {
         val languageIdentifier: FirebaseLanguageIdentification = FirebaseNaturalLanguage.getInstance().languageIdentification
