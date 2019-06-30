@@ -17,7 +17,7 @@ class CatalogoActivity : AppCompatActivity() {
 
         var toolbar: androidx.appcompat.widget.Toolbar= findViewById(R.id.toolbar)
         this.setSupportActionBar(toolbar)
-        val actionBar = supportActionBar
+        val actionBar = supportActionBar//barra de acción
 
 
         // Set toolbar title/app title
@@ -32,10 +32,8 @@ class CatalogoActivity : AppCompatActivity() {
         // Display the app icon in action bar/toolbar
         actionBar.setDisplayShowHomeEnabled(true)
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
-        }
+
+
 
 
     }
@@ -44,6 +42,7 @@ class CatalogoActivity : AppCompatActivity() {
         val inflater = menuInflater
         inflater.inflate(R.menu.main_menu, menu)
         return super.onCreateOptionsMenu(menu)
+
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Handle presses on the action bar menu items
