@@ -35,5 +35,10 @@
     <string name="login_btn_registro">Regístrese</string>
     <string name="login_pltxt_usuario">Usuario</string>
     <string name="login_pltxt_password">Contraseña</string>
+    <string name="txti_titulo">Título</string>
+    <string name="txti_Autor">Autor</string>
+    <string name="txti_ISBN">ISBN</string>
+    <string name="txti_precio">Precio</string>
+
 
 </resources>
