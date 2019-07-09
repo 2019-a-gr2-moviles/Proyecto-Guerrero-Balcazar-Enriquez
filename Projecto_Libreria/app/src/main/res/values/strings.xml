@@ -44,6 +44,9 @@
     <string name="txti_precio">Precio</string>
     <string name="txt_carrito">Carrito</string>
     <string name="txt_catalogo">Catálogo</string>
+    <string name="txt_totalAPagar">Total a pagar</string>
+    <string name="txt_metodoPago">Método de pago</string>
+    <string name="txt_debito">Débito</string>
 
 
 </resources>

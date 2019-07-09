@@ -44,12 +44,12 @@ class AdaptadorCarrito(private val listaLibros: List<LibroCatalogo>,
             botonAddCarrito.setOnClickListener {
                 contexto.deleteCarrito(indice)
             }
-//            botonMas.setOnClickListener {
-//                contexto.masLibro(indice)
-//            }
-//            botonMenos.setOnClickListener {
-//                contexto.menosLibro(indice)
-//            }
+            botonMas.setOnClickListener {
+                contexto.masLibro(indice)
+            }
+            botonMenos.setOnClickListener {
+                contexto.menosLibro(indice)
+            }
 //            botonAddCarrito.setOnClickListener {
 //                contexto.addCarrito(indice)
 //            }
