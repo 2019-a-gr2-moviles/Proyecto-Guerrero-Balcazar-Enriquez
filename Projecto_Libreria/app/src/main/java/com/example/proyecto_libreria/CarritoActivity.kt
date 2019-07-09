@@ -15,9 +15,30 @@ class CarritoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_carrito)
         iniciarRVLibros(CatalogoActivity.objetoCompartido.listaCarrito, this, rv_carrito)
+        var resultadoRedondeado=Math.round(CatalogoActivity.objetoCompartido.totalPagar * 100) / 100.0
+        txt_totalPagar.text= resultadoRedondeado.toString()
+        //"%.2f".format(CatalogoActivity.objetoCompartido.totalPagar).toDouble()
+
+// or
+
+      //  txt_totalPagar.text="%.2f".format(CatalogoActivity.objetoCompartido.totalPagar).toDouble().toString()
         btn_catalogo.setOnClickListener {
             irCatalogo()
         }
+    }
+    fun masLibro(indice: Int){
+        CatalogoActivity.listaCarrito[indice].cantidad++
+        CatalogoActivity.objetoCompartido.totalPagar+=CatalogoActivity.listaCarrito[indice].precio
+        var resultadoRedondeado=Math.round(CatalogoActivity.objetoCompartido.totalPagar * 100) / 100.0
+        txt_totalPagar.text= resultadoRedondeado.toString()
+        iniciarRVLibros(CatalogoActivity.objetoCompartido.listaCarrito, this, rv_carrito)
+    }
+    fun menosLibro(indice: Int){
+        CatalogoActivity.listaCarrito[indice].cantidad++
+        CatalogoActivity.objetoCompartido.totalPagar-=CatalogoActivity.listaCarrito[indice].precio
+        var resultadoRedondeado=Math.round(CatalogoActivity.objetoCompartido.totalPagar * 100) / 100.0
+        txt_totalPagar.text= resultadoRedondeado.toString()
+        iniciarRVLibros(CatalogoActivity.objetoCompartido.listaCarrito, this, rv_carrito)
     }
     fun irCatalogo(){
         val intent= Intent(
@@ -37,6 +58,9 @@ class CarritoActivity : AppCompatActivity() {
     fun deleteCarrito(indice: Int){
 
         var libroCarrito= CatalogoActivity.listaCarrito[indice]
+        CatalogoActivity.totalPagar= CatalogoActivity.totalPagar-(libroCarrito.precio*libroCarrito.cantidad)
+        var resultadoRedondeado=Math.round(CatalogoActivity.objetoCompartido.totalPagar * 100) / 100.0
+        txt_totalPagar.text= resultadoRedondeado.toString()
         CatalogoActivity.listaLibros.add(libroCarrito)
         CatalogoActivity.listaCarrito.remove(libroCarrito)
         iniciarRVLibros(CatalogoActivity.listaCarrito, this, rv_carrito)
