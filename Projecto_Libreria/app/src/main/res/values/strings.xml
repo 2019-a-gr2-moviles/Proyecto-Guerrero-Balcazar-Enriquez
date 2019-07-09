@@ -35,13 +35,15 @@
     <string name="login_btn_ingresar">Ingresar</string>
     <string name="login_txt_registro">¿No tiene usuario?, entonces...</string>
     <string name="login_btn_registro">Regístrese</string>
-     <string name="login_pltxt_usuario">Usuario:</string>
+    <string name="login_pltxt_usuario">Usuario:</string>
     <string name="login_pltxt_password">Contraseña:</string>
     <string name="login_txt_iniciarsesion">Inicio de Sesión</string>
     <string name="txti_titulo">Título</string>
     <string name="txti_Autor">Autor</string>
     <string name="txti_ISBN">ISBN</string>
     <string name="txti_precio">Precio</string>
+    <string name="txt_carrito">Carrito</string>
+    <string name="txt_catalogo">Catálogo</string>
 
 
 </resources>
