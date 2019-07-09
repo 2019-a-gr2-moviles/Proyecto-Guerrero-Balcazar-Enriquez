@@ -19,6 +19,8 @@
             android:layout_height="49dp"
             android:background="@drawable/borde"
             android:id="@+id/txti_numproductos"
+            android:gravity="center"
+            android:textSize="18dp"
             android:layout_marginTop="8dp"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toEndOf="@+id/btn_menos"
             android:layout_marginStart="8dp"/>
@@ -30,17 +32,17 @@
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp"/>
     <ImageButton
-            android:layout_width="128dp"
-            android:layout_height="80dp" app:srcCompat="@drawable/carrito"
-            android:id="@+id/imageButton5" android:layout_marginTop="8dp"
+            android:layout_width="134dp"
+            android:layout_height="53dp" app:srcCompat="@drawable/carrito"
+            android:id="@+id/btn_addCarrito" android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/txti_numproductos" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="36dp" android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.008"/>
     <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="218dp"
-            android:layout_height="160dp" app:layout_constraintStart_toEndOf="@+id/imageButton5"
+            android:layout_width="221dp"
+            android:layout_height="139dp" app:layout_constraintStart_toEndOf="@+id/btn_addCarrito"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginStart="8dp" android:layout_marginBottom="8dp"
+            android:layout_marginStart="16dp" android:layout_marginBottom="2dp"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.014"
             app:layout_constraintHorizontal_bias="0.578">
 
@@ -105,4 +107,4 @@
                 app:layout_constraintHorizontal_bias="0.0" android:layout_marginBottom="8dp"
                 app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.0"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
-</>
+</androidx.constraintlayout.widget.ConstraintLayout>

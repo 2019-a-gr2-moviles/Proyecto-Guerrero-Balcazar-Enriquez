@@ -11,6 +11,10 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
+    companion object objetoCompartido {
+        var url = "http://192.168.200.5:1337"
+
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         val intent= Intent(
             this, CatalogoActivity::class.java
         )
+        intent.putExtra("opcion", "inicial" )
         startActivity(intent);
     }
 
