@@ -62,6 +62,10 @@ class CatalogoActivity : AppCompatActivity() {
 
 
     }
+    fun generarFactura(){
+
+    }
+
 
     fun irCarrito() {
         val intent = Intent(
@@ -74,7 +78,6 @@ class CatalogoActivity : AppCompatActivity() {
         val intent = Intent(
             this, GestionLibrosActivity::class.java
         )
-
         startActivity(intent);
     }
 

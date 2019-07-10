@@ -47,6 +47,7 @@
     <string name="txt_totalAPagar">Total a pagar</string>
     <string name="txt_metodoPago">Método de pago</string>
     <string name="txt_debito">Débito</string>
+    <string name="txt_numero_factura">Ingrese número de tarjeta</string>
 
 
 </resources>
