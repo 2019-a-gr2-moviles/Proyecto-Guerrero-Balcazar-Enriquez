@@ -48,6 +48,10 @@
     <string name="txt_metodoPago">Método de pago</string>
     <string name="txt_debito">Débito</string>
     <string name="txt_numero_factura">Ingrese número de tarjeta</string>
+    <string name="txt_edicion">Edición</string>
+    <string name="txt_editorial">Editorial</string>
+    <string name="txt_estado">Estado</string>
+    <string name="txt_activo">Activo</string>
 
 
 </resources>
