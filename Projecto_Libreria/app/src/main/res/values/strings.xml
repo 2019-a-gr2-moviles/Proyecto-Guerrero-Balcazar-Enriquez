@@ -38,5 +38,20 @@
     <string name="login_pltxt_usuario">Usuario:</string>
     <string name="login_pltxt_password">Contraseña:</string>
     <string name="login_txt_iniciarsesion">Inicio de Sesión</string>
+    <string name="txti_titulo">Título</string>
+    <string name="txti_Autor">Autor</string>
+    <string name="txti_ISBN">ISBN</string>
+    <string name="txti_precio">Precio</string>
+    <string name="txt_carrito">Carrito</string>
+    <string name="txt_catalogo">Catálogo</string>
+    <string name="txt_totalAPagar">Total a pagar</string>
+    <string name="txt_metodoPago">Método de pago</string>
+    <string name="txt_debito">Débito</string>
+    <string name="txt_numero_factura">Ingrese número de tarjeta</string>
+    <string name="txt_edicion">Edición</string>
+    <string name="txt_editorial">Editorial</string>
+    <string name="txt_estado">Estado</string>
+    <string name="txt_activo">Activo</string>
+
 
 </resources>
