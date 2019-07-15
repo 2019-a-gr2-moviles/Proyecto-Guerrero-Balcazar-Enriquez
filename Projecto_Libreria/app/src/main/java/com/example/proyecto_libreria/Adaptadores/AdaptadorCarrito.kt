@@ -1,4 +1,4 @@
-package com.example.proyecto_libreria
+package com.example.proyecto_libreria.Adaptadores
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +6,9 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.proyecto_libreria.Actividades.CarritoActivity
+import com.example.proyecto_libreria.Clases.LibroCatalogo
+import com.example.proyecto_libreria.R
 
 class AdaptadorCarrito(private val listaLibros: List<LibroCatalogo>,
 

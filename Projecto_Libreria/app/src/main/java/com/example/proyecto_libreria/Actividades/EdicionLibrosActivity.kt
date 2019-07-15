@@ -1,7 +1,8 @@
-package com.example.proyecto_libreria
+package com.example.proyecto_libreria.Actividades
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.proyecto_libreria.R
 
 class EdicionLibrosActivity : AppCompatActivity() {
 

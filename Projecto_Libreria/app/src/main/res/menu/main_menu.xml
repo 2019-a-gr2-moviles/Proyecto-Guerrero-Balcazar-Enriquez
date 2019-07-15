@@ -11,8 +11,8 @@
             android:title="Administrar catálogo">
     </item>
     <item
-            android:id="@+id/action_carrito"
+            android:id="@+id/action_factura"
 
-            android:title="Administrar carrito">
+            android:title="Ver compras">
     </item>
 </menu>

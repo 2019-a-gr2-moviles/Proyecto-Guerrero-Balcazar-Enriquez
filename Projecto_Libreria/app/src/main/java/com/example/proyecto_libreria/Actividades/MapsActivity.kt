@@ -1,9 +1,7 @@
-package com.example.proyecto_libreria
+package com.example.proyecto_libreria.Actividades
 
-import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -11,11 +9,9 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-import android.location.LocationManager
-import android.content.Context.LOCATION_SERVICE
 import android.content.pm.PackageManager
 import androidx.core.app.ActivityCompat
-import java.util.jar.Manifest
+import com.example.proyecto_libreria.R
 
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
