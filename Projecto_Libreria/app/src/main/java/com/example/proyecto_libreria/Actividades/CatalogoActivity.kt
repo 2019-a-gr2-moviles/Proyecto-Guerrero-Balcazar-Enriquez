@@ -1,4 +1,4 @@
-package com.example.proyecto_libreria
+package com.example.proyecto_libreria.Actividades
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,17 +6,18 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.beust.klaxon.Klaxon
+import com.example.proyecto_libreria.Adaptadores.AdaptadorCatalogo
+import com.example.proyecto_libreria.Clases.Libro
+import com.example.proyecto_libreria.Clases.LibroCatalogo
+import com.example.proyecto_libreria.R
 import com.github.kittinunf.fuel.httpGet
 import com.github.kittinunf.result.Result
-import kotlinx.android.synthetic.main.activity_carrito.*
 
-import kotlinx.android.synthetic.main.activity_catalogo.*
 import kotlinx.android.synthetic.main.content_catalogo.*
 
 class CatalogoActivity : AppCompatActivity() {
@@ -35,9 +36,11 @@ class CatalogoActivity : AppCompatActivity() {
         var opcion = intent.getStringExtra("opcion")
 
         if (opcion == "recargar") {
-            iniciarRVLibros(objetoCompartido.listaLibros, this, rv_libros)
+            iniciarRVLibros(listaLibros, this, rv_catalogo)
         } else {
-            objetoCompartido.listaLibros = ArrayList<LibroCatalogo>()
+            listaLibros = ArrayList<LibroCatalogo>()
+            listaCarrito = ArrayList<LibroCatalogo>()
+            totalPagar=0.0
             cargarLibros()
         }
         var toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbar)
@@ -73,6 +76,7 @@ class CatalogoActivity : AppCompatActivity() {
         )
 
         startActivity(intent);
+        finish()
     }
     fun irGestionLibros() {
         val intent = Intent(
@@ -80,16 +84,32 @@ class CatalogoActivity : AppCompatActivity() {
         )
         startActivity(intent);
     }
+    fun irIntentRespuesta() {
+        val intent = Intent(
+            this, MapsActivity::class.java
+        )
+
+        startActivity(intent);
+
+    }
+    fun irIntentFactura() {
+        val intent = Intent(
+            this, FacturasClienteActivity::class.java
+        )
+
+        startActivity(intent);
+
+    }
 
     fun addCarrito(indice: Int) {
-        var libroCarrito = objetoCompartido.listaLibros[indice]
+        var libroCarrito = listaLibros[indice]
         if (libroCarrito.cantidad != 0) {
 
-            objetoCompartido.totalPagar = objetoCompartido.totalPagar + (libroCarrito.precio*libroCarrito.cantidad)
+            totalPagar = totalPagar + (libroCarrito.precio*libroCarrito.cantidad)
 
-            objetoCompartido.listaCarrito.add(libroCarrito)
-            objetoCompartido.listaLibros.remove(libroCarrito)
-            iniciarRVLibros(objetoCompartido.listaLibros, this, rv_libros)
+            listaCarrito.add(libroCarrito)
+            listaLibros.remove(libroCarrito)
+            iniciarRVLibros(listaLibros, this, rv_catalogo)
 
         }else{
             Toast.makeText(applicationContext, "No ha seleccionado la cantidad", Toast.LENGTH_SHORT).show()
@@ -98,20 +118,21 @@ class CatalogoActivity : AppCompatActivity() {
 
     fun masLibro(indice: Int) {
 
-        objetoCompartido.listaLibros[indice].cantidad++
-        iniciarRVLibros(objetoCompartido.listaLibros, this, rv_libros)
+        listaLibros[indice].cantidad++
+       // CatalogoActivity.totalPagar += CatalogoActivity.listaCarrito[indice].precio
+        iniciarRVLibros(listaLibros, this, rv_catalogo)
     }
 
     fun menosLibro(indice: Int) {
-        if (objetoCompartido.listaLibros[indice].cantidad != 0) {
-            objetoCompartido.listaLibros[indice].cantidad--
-            iniciarRVLibros(objetoCompartido.listaLibros, this, rv_libros)
+        if (listaLibros[indice].cantidad != 0) {
+            listaLibros[indice].cantidad--
+            iniciarRVLibros(listaLibros, this, rv_catalogo)
         }
 
     }
 
     fun cargarLibros() {
-        val url = "${MainActivity.objetoCompartido.url}/libro"
+        val url = "${MainActivity.url}/libro"
         var lista = listOf<LibroCatalogo>()
         var listaLibros = ArrayList<LibroCatalogo>()
         url
@@ -135,11 +156,8 @@ class CatalogoActivity : AppCompatActivity() {
                                 )
                             )
                         }
-
-
-
                         runOnUiThread {
-                            iniciarRVLibros(objetoCompartido.listaLibros, this, rv_libros)
+                            iniciarRVLibros(objetoCompartido.listaLibros, this, rv_catalogo)
                         }
 
                     }
@@ -150,11 +168,12 @@ class CatalogoActivity : AppCompatActivity() {
     }
 
     fun iniciarRVLibros(lista: List<LibroCatalogo>, actividad: CatalogoActivity, recycler_view: RecyclerView) {
-        val adaptadorPlato = AdaptadorCatalogo(lista, actividad, recycler_view)
-        rv_libros.adapter = adaptadorPlato
-        rv_libros.itemAnimator = DefaultItemAnimator()
+        val adaptadorPlato =
+            AdaptadorCatalogo(lista, actividad, recycler_view)
+        rv_catalogo.adapter = adaptadorPlato
+        rv_catalogo.itemAnimator = DefaultItemAnimator()
         //Nos falta el layout manager
-        rv_libros.layoutManager = LinearLayoutManager(this)
+        rv_catalogo.layoutManager = LinearLayoutManager(this)
         adaptadorPlato.notifyDataSetChanged()
     }
 
@@ -176,17 +195,17 @@ class CatalogoActivity : AppCompatActivity() {
             }
 
             R.id.action_catalogo -> {
-                if(MainActivity.objetoCompartido.permisoAdmin){
+                if(MainActivity.permisoAdmin){
                     irGestionLibros()
                 }else{
                     Toast.makeText(applicationContext, "Opción sólo disponible para usuarios de tipo ADMINISTRADOR", Toast.LENGTH_SHORT).show()
                 }
                 return true
             }
-//            R.id.action_paste -> {
-//                text_view.text = "Paste"
-//                return true
-//            }
+            R.id.action_factura -> {
+               irIntentFactura()
+                return true
+            }
 //            R.id.action_new -> {
 //                text_view.text = "New"
 //                return true
@@ -195,14 +214,7 @@ class CatalogoActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    fun irIntentRespuesta() {
-        val intent = Intent(
-            this, MapsActivity::class.java
-        )
 
-        startActivity(intent);
-
-    }
 
 
 }

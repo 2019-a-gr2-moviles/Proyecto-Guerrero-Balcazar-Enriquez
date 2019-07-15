@@ -1,8 +1,9 @@
-package com.example.proyecto_libreria
+package com.example.proyecto_libreria.Actividades
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.proyecto_libreria.R
 import kotlinx.android.synthetic.main.activity_seleccion_locales.*
 
 class SeleccionLocalesActivity : AppCompatActivity() {
