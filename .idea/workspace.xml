@@ -6,34 +6,7 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b8e9136-1f0e-4970-9a85-7848dfca5cb7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/res/layout/layout_gestion_libros.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/res/xml/network_security_config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/java/com/example/proyecto_libreria/AdaptadorCarrito.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/java/com/example/proyecto_libreria/Adaptadores/AdaptadorCarrito.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/java/com/example/proyecto_libreria/AdaptadorCatalogo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/java/com/example/proyecto_libreria/Adaptadores/AdaptadorCatalogo.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/java/com/example/proyecto_libreria/CarritoActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/java/com/example/proyecto_libreria/Actividades/CarritoActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/java/com/example/proyecto_libreria/CatalogoActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/java/com/example/proyecto_libreria/Actividades/CatalogoActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/java/com/example/proyecto_libreria/EdicionLibrosActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/java/com/example/proyecto_libreria/Actividades/EdicionLibrosActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/java/com/example/proyecto_libreria/Factura.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/java/com/example/proyecto_libreria/Clases/Factura.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/java/com/example/proyecto_libreria/GestionLibrosActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/java/com/example/proyecto_libreria/Actividades/GestionLibrosActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/java/com/example/proyecto_libreria/HistorialUsuarioTipo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/java/com/example/proyecto_libreria/Clases/HistorialUsuarioTipo.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/java/com/example/proyecto_libreria/Libro.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/java/com/example/proyecto_libreria/Clases/Libro.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/java/com/example/proyecto_libreria/LibroCatalogo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/java/com/example/proyecto_libreria/Clases/LibroCatalogo.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/java/com/example/proyecto_libreria/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/java/com/example/proyecto_libreria/Actividades/MainActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/java/com/example/proyecto_libreria/MapsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/java/com/example/proyecto_libreria/Actividades/MapsActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/java/com/example/proyecto_libreria/SeleccionLocalesActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/java/com/example/proyecto_libreria/Actividades/SeleccionLocalesActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/java/com/example/proyecto_libreria/TipoUsuario.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/java/com/example/proyecto_libreria/Clases/TipoUsuario.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/java/com/example/proyecto_libreria/Usuario.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/java/com/example/proyecto_libreria/Clases/Usuario.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/res/layout/activity_carrito.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/res/layout/activity_carrito.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/res/layout/activity_catalogo.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/res/layout/activity_catalogo.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/res/layout/activity_edicion_libros.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/res/layout/activity_edicion_libros.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/res/layout/activity_gestion_libros.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/res/layout/activity_gestion_libros.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/res/layout/activity_maps.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/res/layout/activity_maps.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/res/layout/activity_seleccion_locales.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/res/layout/activity_seleccion_locales.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/res/layout/content_catalogo.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Projecto_Libreria/app/src/main/res/layout/content_catalogo.xml" afterDir="false" />
-    </list>
+    <list default="true" id="7b8e9136-1f0e-4970-9a85-7848dfca5cb7" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,10 +38,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1912" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -76,6 +49,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -98,7 +72,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -196,10 +169,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.4159226" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.41573033" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
