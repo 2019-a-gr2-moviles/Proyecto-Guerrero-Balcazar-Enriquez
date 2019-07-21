@@ -60,4 +60,13 @@
     <string name="txt_total">Total</string>
 
 
+
+    //activity registro usuario
+    <string name="actRU_nombreUsuario">Nombre:</string>
+    <string name="actRU_apellidoUsuario">Apellido:</string>
+    <string name="actRU_cedulaUsuario">Cédula:</string>
+    <string name="actRU_userUsuario">Usuario:</string>
+    <string name="actRU_passwordUsuario">Contraseña:</string>
+    <string name="actRU_tipoUsuario">Tipo Usuario:</string>
+    <string name="actRU_btn">Registrar</string>
 </resources>

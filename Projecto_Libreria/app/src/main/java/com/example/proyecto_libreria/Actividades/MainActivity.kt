@@ -11,6 +11,7 @@ import com.example.proyecto_libreria.Clases.HistorialUsuarioTipo
 import com.example.proyecto_libreria.Clases.Usuario
 import com.example.proyecto_libreria.R
 import com.github.kittinunf.fuel.httpGet
+import com.github.kittinunf.fuel.httpPost
 import com.github.kittinunf.result.Result
 
 import com.google.firebase.ml.naturallanguage.FirebaseNaturalLanguage
@@ -20,7 +21,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
     companion object objetoCompartido {
         //var url = "http://172.29.52.56:1337"
-        var url = "http://172.29.47.25:1337"
+        //var url = "http://172.29.47.25:1337"
+        var url = "http://192.168.100.230:1337";
         var nombreUsuario = ""
         var idUsuario =-1
         var permisoAdmin=true
@@ -34,7 +36,11 @@ class MainActivity : AppCompatActivity() {
         identificarIdioma()
 
         login_btn_ingresar.setOnClickListener {
-            autenticar()
+            autenticar();
+        }
+
+        login_btn_registro.setOnClickListener {
+            irARegistroActivity();
         }
     }
 
@@ -96,7 +102,18 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(
             this, CatalogoActivity::class.java
         )
-        intent.putExtra("opcion", "inicial")
+        intent.putExtra("opcion", "inicial");
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+    }
+
+    fun irARegistroActivity() {
+
+        val intent = Intent(
+            this, RegistroUsuarioActivity::class.java
+        )
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
         startActivity(intent);
     }
 
@@ -114,4 +131,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
     }
+
+
+
 }
