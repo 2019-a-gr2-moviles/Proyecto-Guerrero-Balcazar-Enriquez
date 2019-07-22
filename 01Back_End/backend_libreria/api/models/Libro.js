@@ -9,7 +9,7 @@ module.exports = {
 
   attributes: {
     nombreAtributo: {
-      type:'string'
+      type:'number'
     },
     titulo: {
       type: 'string',
@@ -48,6 +48,10 @@ module.exports = {
       type: 'string',
       required: true,
       enum: ['disponible', 'no disponible']
+    },
+    idioma: {
+      type: 'string',
+      required: true,
     },
     categoriaRelacionLibro: {
       collection: 'historiaCategoriaLibro',
