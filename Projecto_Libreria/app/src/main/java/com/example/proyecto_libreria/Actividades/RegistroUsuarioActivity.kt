@@ -8,6 +8,10 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
+import com.beust.klaxon.Klaxon
+import com.example.proyecto_libreria.Clases.HistorialUsuarioTipo
+import com.example.proyecto_libreria.Clases.Libro
+import com.example.proyecto_libreria.Clases.Usuario
 import com.example.proyecto_libreria.R
 import com.github.kittinunf.fuel.httpPost
 import com.github.kittinunf.result.Result
@@ -78,8 +82,7 @@ class RegistroUsuarioActivity : AppCompatActivity(), AdapterView.OnItemSelectedL
                   "apellido": "${apellidoUsuario}",
                   "cedula":"${cedulaUsuario}",
                   "username": "${usernameUsuario}",
-                  "contrasenia": "${contraseniaUsuario}",
-                  "idTipo": ${idTipoUsuario}
+                  "contrasenia": "${contraseniaUsuario}"
                 }
         """.trimIndent()
 
@@ -87,7 +90,7 @@ class RegistroUsuarioActivity : AppCompatActivity(), AdapterView.OnItemSelectedL
 
             var urlCrearUsuario="${MainActivity.objetoCompartido.url}/usuario"
 
-    Log.i("http","$urlCrearUsuario");
+            Log.i("http","$urlCrearUsuario");
             urlCrearUsuario
               .httpPost().body(usuario)
                 .responseString { request, response, result ->
@@ -103,6 +106,9 @@ class RegistroUsuarioActivity : AppCompatActivity(), AdapterView.OnItemSelectedL
 
                             Log.i("http","${usuarioString}");
 
+                            var usuarioParseado = Klaxon().parse<Usuario>(usuarioString);
+
+                            insertarHistorialUsuarioTipo(usuarioParseado!!.id!!,idTipoUsuario);
                             runOnUiThread {
                                 txtregistroUser_nombre.setText("");
                                 txtregistroUser_apellido.setText("");
@@ -123,5 +129,42 @@ class RegistroUsuarioActivity : AppCompatActivity(), AdapterView.OnItemSelectedL
         }
 
 
+    }
+
+
+    fun insertarHistorialUsuarioTipo(idUsuario:Int,idTipoUsuario:Int){
+
+        var urlCrearHistorialUsuarioTipo="${MainActivity.objetoCompartido.url}/historialUsuarioTipo"
+
+        val rompimiento = """
+
+                {
+                  "idUsuario": ${idUsuario},
+                  "idTipo": ${idTipoUsuario}
+                }
+        """.trimIndent();
+
+
+        urlCrearHistorialUsuarioTipo
+            .httpPost().body(rompimiento)
+            .responseString { request, response, result ->
+                when(result){
+
+                    is Result.Failure ->{
+                        val ex = result.getException()
+                        Log.i("http", "Error: ${ex.message}")
+                    }
+
+                    is Result.Success ->{
+                        val rompimientoInsertada= result.get();
+
+                        Log.i("http","${rompimientoInsertada}");
+
+
+                    }
+
+                }
+
+            }
     }
 }
