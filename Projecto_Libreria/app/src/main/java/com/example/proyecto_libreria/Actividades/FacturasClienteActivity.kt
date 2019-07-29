@@ -47,7 +47,7 @@ class FacturasClienteActivity : AppCompatActivity() {
 
 
     fun cargarLibros() {
-        val url = "${MainActivity.url}/factura"
+        val url = "${MainActivity.url}/factura?idUsuario=${MainActivity.objetoCompartido.idUsuario}"
         var lista = listOf<Factura>()
         url
             .httpGet()

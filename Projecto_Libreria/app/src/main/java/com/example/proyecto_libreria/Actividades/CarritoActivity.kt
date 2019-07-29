@@ -220,11 +220,13 @@ class CarritoActivity : AppCompatActivity() {
         iniciarRVLibros(CatalogoActivity.listaCarrito, this, rv_carrito)
     }
     fun menosLibro(indice: Int){
-        CatalogoActivity.listaCarrito[indice].cantidad--
-        CatalogoActivity.totalPagar -= CatalogoActivity.listaCarrito[indice].precio
-        var resultadoRedondeado=Math.round(CatalogoActivity.totalPagar * 100) / 100.0
-        txt_totalPagar.text= resultadoRedondeado.toString()
-        iniciarRVLibros(CatalogoActivity.listaCarrito, this, rv_carrito)
+        if (CatalogoActivity.listaCarrito[indice].cantidad != 0) {
+            CatalogoActivity.listaCarrito[indice].cantidad--
+            CatalogoActivity.totalPagar -= CatalogoActivity.listaCarrito[indice].precio
+            var resultadoRedondeado = Math.round(CatalogoActivity.totalPagar * 100) / 100.0
+            txt_totalPagar.text = resultadoRedondeado.toString()
+            iniciarRVLibros(CatalogoActivity.listaCarrito, this, rv_carrito)
+        }
     }
     fun irCatalogo(){
         val intent= Intent(

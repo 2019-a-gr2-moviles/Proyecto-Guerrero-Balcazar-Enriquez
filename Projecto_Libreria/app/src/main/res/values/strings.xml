@@ -69,4 +69,5 @@
     <string name="actRU_passwordUsuario">Contraseña:</string>
     <string name="actRU_tipoUsuario">Tipo Usuario:</string>
     <string name="actRU_btn">Registrar</string>
+    <string name="productosComprados">Productos compradosr</string>
 </resources>

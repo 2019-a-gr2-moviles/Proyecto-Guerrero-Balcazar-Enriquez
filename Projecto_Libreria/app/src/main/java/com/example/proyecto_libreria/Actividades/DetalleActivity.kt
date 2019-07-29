@@ -36,7 +36,8 @@ class DetalleActivity : AppCompatActivity() {
         var idFactura = intent.getIntExtra("idFactura", -1)
         cargarDetalles(idFactura)
     }
-    fun cargarDetalles(idFactura: Int){
+
+    fun cargarDetalles(idFactura: Int) {
         val url = "${MainActivity.url}/detalle?idFactura=${idFactura}"
         var lista = listOf<Factura>()
         url
@@ -56,6 +57,31 @@ class DetalleActivity : AppCompatActivity() {
                         runOnUiThread {
                             iniciarLibros(detalleParseada!!, this, rv_libros_detalle)
                         }
+                        val urlFactura = "${MainActivity.url}/factura?id=${idFactura}"
+                        urlFactura.httpGet()
+                            .responseString { request, response, result ->
+                                when (result) {
+                                    is Result.Failure -> {
+                                        val ex = result.getException()
+                                        Log.i("http", "Error: ${ex.message}")
+                                    }
+                                    is Result.Success -> {
+
+                                        val data = result.get()
+                                        Log.i("http", "Data: ${data}")
+
+                                        var facturaParseada = Klaxon().parseArray<Factura>(data)
+                                        runOnUiThread {
+                                            txt_fecha.text= facturaParseada!![0].fecha.toString()
+                                            txt_total.text= facturaParseada!![0].total.toString()
+                                        }
+
+
+                                    }
+                                }
+                            }
+
+
 
                     }
                 }
@@ -63,8 +89,10 @@ class DetalleActivity : AppCompatActivity() {
 
 
     }
+
     fun iniciarLibros(
-                      lista: List<Detalle>, actividad: DetalleActivity, recycler_view: RecyclerView) {
+        lista: List<Detalle>, actividad: DetalleActivity, recycler_view: RecyclerView
+    ) {
         val adaptadorPlato =
             AdaptadorLibroDetalle(lista, actividad, recycler_view)
         rv_libros_detalle.adapter = adaptadorPlato
@@ -73,6 +101,7 @@ class DetalleActivity : AppCompatActivity() {
         rv_libros_detalle.layoutManager = LinearLayoutManager(this)
         adaptadorPlato.notifyDataSetChanged()
     }
+
     fun dialogLibro(libro: Libro) {
 
         val builder = AlertDialog.Builder(this)

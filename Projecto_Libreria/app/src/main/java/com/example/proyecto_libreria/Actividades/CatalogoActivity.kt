@@ -62,6 +62,9 @@ class CatalogoActivity : AppCompatActivity() {
         btnc_carrito.setOnClickListener {
             irCarrito()
         }
+        btn_buscarLibro.setOnClickListener {
+            buscarLibros()
+        }
 
 
     }
@@ -129,6 +132,12 @@ class CatalogoActivity : AppCompatActivity() {
             iniciarRVLibros(listaLibros, this, rv_catalogo)
         }
 
+    }
+    fun buscarLibros(){
+        var listaFiltrada= objetoCompartido.listaLibros.filter {
+            it.titulo.contains(txt_buscarLibro.text.toString())
+        }
+        iniciarRVLibros(listaFiltrada, this, rv_catalogo)
     }
 
     fun cargarLibros() {

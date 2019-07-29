@@ -35,7 +35,8 @@
                 android:label="@string/title_activity_catalogo"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".Actividades.GestionLibrosActivity">
+        <activity android:name=".Actividades.GestionLibrosActivity"
+                  android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity android:name=".Actividades.EdicionLibrosActivity">
         </activity>

@@ -45,6 +45,9 @@ class GestionLibrosActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_gestion_libros)
         cargarLibros()
+        btn_buscarLibroGestion.setOnClickListener {
+            buscarLibros()
+        }
 
         btn_nuevoLibro.setOnClickListener {
             dialogLibro(
@@ -157,7 +160,12 @@ class GestionLibrosActivity : AppCompatActivity() {
             }
 
     }
-
+    fun buscarLibros(){
+        var listaFiltrada= companionObjectlibros.lista.filter {
+            it.titulo.contains(txt_buscarLibroGestion.text.toString())
+        }
+        iniciarLibros(listaFiltrada, this, rv_gestionLibros)
+    }
     fun editarLibro(libro: Libro) {
         val url = "${MainActivity.objetoCompartido.url}/libro/${libro.id}"
         val bodyJson = """
