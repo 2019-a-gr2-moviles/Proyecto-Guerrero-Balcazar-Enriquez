@@ -41,8 +41,8 @@
             android:layout_marginEnd="32dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginBottom="32dp"
             app:layout_constraintBottom_toBottomOf="parent"/>
     <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="357dp"
-            android:layout_height="521dp"
+            android:layout_width="355dp"
+            android:layout_height="486dp"
             android:id="@+id/rv_catalogo"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="24dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="24dp" android:layout_marginTop="32dp"
