@@ -11,31 +11,31 @@
             android:layout_width="95dp"
             android:layout_height="40dp"
             android:id="@+id/layout_libro_titulo" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent" android:gravity="center_vertical"/>
     <TextView
             android:text="TextView"
             android:layout_width="100dp"
             android:layout_height="40dp"
             android:id="@+id/layout_libro_autor" app:layout_constraintStart_toEndOf="@+id/layout_libro_titulo"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" android:gravity="center_vertical"/>
     <TextView
             android:text="TextView"
             android:layout_width="80dp"
             android:layout_height="40dp"
             android:id="@+id/layout_libro_isbn" app:layout_constraintStart_toEndOf="@+id/layout_libro_autor"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toStartOf="@+id/layout_libro_btn_editar"
+            android:layout_marginEnd="16dp" android:gravity="center_vertical"/>
     <ImageButton
-            android:layout_width="52dp"
-            android:layout_height="42dp" app:srcCompat="@drawable/lapiz"
-            android:id="@+id/layout_libro_btn_editar" app:layout_constraintStart_toEndOf="@+id/layout_libro_isbn"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            android:layout_width="40dp"
+            android:layout_height="40dp" app:srcCompat="@drawable/edit_icon"
+            android:id="@+id/layout_libro_btn_editar"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toStartOf="@+id/layout_libro_btn_borrar"
+            android:background="@color/colorBlanco" android:layout_marginEnd="8dp"/>
     <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" app:srcCompat="@drawable/trash"
+            android:layout_width="40dp"
+            android:layout_height="40dp" app:srcCompat="@drawable/trash_icon"
             android:id="@+id/layout_libro_btn_borrar"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/layout_libro_btn_editar" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            app:layout_constraintHorizontal_bias="0.0" app:layout_constraintVertical_bias="0.0"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" android:background="@color/colorBlanco"
+            android:layout_marginEnd="8dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

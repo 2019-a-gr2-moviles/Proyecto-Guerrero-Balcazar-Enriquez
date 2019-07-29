@@ -88,7 +88,8 @@ class MainActivity : AppCompatActivity() {
                         irACatalogoActivity()
 
                     }else{
-                        Toast.makeText(applicationContext, "Usuario o  contraseña no correctos", Toast.LENGTH_SHORT).show()
+                        Log.i("http", "Usuario Incorrecto")
+                        Toast.makeText(applicationContext, "Usuario o  contraseña incorrectos", Toast.LENGTH_SHORT).show()
                     }
 
                 }

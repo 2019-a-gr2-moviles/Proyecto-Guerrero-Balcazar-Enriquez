@@ -49,10 +49,7 @@ class CatalogoActivity : AppCompatActivity() {
 
 
         // Set toolbar title/app title
-        actionBar!!.title = "Bienvenido"
-
-        // Set action bar/toolbar sub title
-        actionBar.subtitle = "Catálogo"
+        actionBar!!.title = "Catalogo"
 
         // Set action bar elevation
         actionBar.elevation = 4.0F

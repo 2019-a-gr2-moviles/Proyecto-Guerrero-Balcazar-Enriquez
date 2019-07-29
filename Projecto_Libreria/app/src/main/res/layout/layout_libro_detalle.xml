@@ -11,26 +11,27 @@
             android:layout_height="50dp"
             android:id="@+id/layout_libro_detalle_titulo"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent" android:gravity="center_vertical"/>
     <TextView
             android:text="TextView"
             android:layout_width="112dp"
             android:layout_height="50dp"
             android:id="@+id/layout_libro_detalle_autor"
             app:layout_constraintStart_toEndOf="@+id/layout_libro_detalle_titulo"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" android:gravity="center_vertical"/>
     <TextView
             android:text="TextView"
             android:layout_width="94dp"
             android:layout_height="50dp"
             android:id="@+id/layout_libro_detalle_isbn"
             app:layout_constraintStart_toEndOf="@+id/layout_libro_detalle_autor"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toStartOf="@+id/btn_verLibro"
+            android:layout_marginEnd="8dp" android:gravity="center_vertical"/>
     <ImageButton
-            android:layout_width="69dp"
-            android:layout_height="49dp" app:srcCompat="@drawable/flecha"
-            android:id="@+id/btn_verLibro" app:layout_constraintStart_toEndOf="@+id/layout_libro_detalle_isbn"
-            android:layout_marginStart="8dp" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            app:layout_constraintHorizontal_bias="0.0"/>
+            android:layout_width="49dp"
+            android:layout_height="49dp" app:srcCompat="@drawable/rightarrow2_icon"
+            android:id="@+id/btn_verLibro"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/colorCafeOscuro"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

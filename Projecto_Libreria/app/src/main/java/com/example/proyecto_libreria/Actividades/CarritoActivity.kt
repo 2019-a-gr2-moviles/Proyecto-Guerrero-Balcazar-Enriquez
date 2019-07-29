@@ -52,10 +52,7 @@ class CarritoActivity : AppCompatActivity() {
 
 
         // Set toolbar title/app title
-        actionBar!!.title = "Hello APP"
-
-        // Set action bar/toolbar sub title
-        actionBar.subtitle = "App subtitle"
+        actionBar!!.title = "Carrito"
 
         // Set action bar elevation
         actionBar.elevation = 4.0F
