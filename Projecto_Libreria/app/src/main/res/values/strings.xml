@@ -52,6 +52,22 @@
     <string name="txt_editorial">Editorial</string>
     <string name="txt_estado">Estado</string>
     <string name="txt_activo">Activo</string>
+    <string name="txt_nuevoLibro">Nuevo libro</string>
+    <string name="txt_idioma">Idioma</string>
+    <string name="txt_facturasCliente">Facturas cliente</string>
+    <string name="txt_fecha">Fecha</string>
+    <string name="txt_cantidad">Cantidad</string>
+    <string name="txt_total">Total</string>
 
 
+
+    //activity registro usuario
+    <string name="actRU_nombreUsuario">Nombre:</string>
+    <string name="actRU_apellidoUsuario">Apellido:</string>
+    <string name="actRU_cedulaUsuario">Cédula:</string>
+    <string name="actRU_userUsuario">Usuario:</string>
+    <string name="actRU_passwordUsuario">Contraseña:</string>
+    <string name="actRU_tipoUsuario">Tipo Usuario:</string>
+    <string name="actRU_btn">Registrar</string>
+    <string name="productosComprados">Productos compradosr</string>
 </resources>

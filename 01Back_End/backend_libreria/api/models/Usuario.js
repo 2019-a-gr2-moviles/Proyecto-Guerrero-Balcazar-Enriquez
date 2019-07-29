@@ -36,14 +36,16 @@ module.exports = {
       type: 'string',
       required: true
     },
-    idTipo: {
-      model:'tipoUsuario'
-    },
+  
   
     serviciosDeUsuario: {//Nombre atributo de la realción
       collection: 'factura', //Nombre del modelo a relaionar
       via: 'idUsuario' //Nombre atributo FK del otro modelo
     },
+    usuarioTipo: {
+      collection: 'historialUsuarioTipo',
+      via: 'idUsuario'
+    }
   },
 
 };

@@ -1,5 +1,5 @@
 /**
- * TipoUsuario.js
+ * HistorialUsuarioTipo.js
  *
  * @description :: A model definition represents a database table/collection.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
@@ -8,18 +8,16 @@
 module.exports = {
 
   attributes: {
-    usuarioTipo: {
-      collection:'historialUsuarioTipo',
-      via: 'idTipo'
-    },
-    nombre:{
 
-    type:'string',
-    required: true
-    } ,
- 
+    idUsuario: {
+      model:'usuario'
+    },
+    idTipo: {
+      model: 'tipoUsuario'
+    }
+    
+
   },
- 
 
 };
 

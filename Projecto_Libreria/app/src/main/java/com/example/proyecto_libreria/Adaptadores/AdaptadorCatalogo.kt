@@ -1,17 +1,19 @@
-package com.example.proyecto_libreria
+package com.example.proyecto_libreria.Adaptadores
 
-import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.proyecto_libreria.Actividades.CatalogoActivity
+import com.example.proyecto_libreria.Clases.LibroCatalogo
+import com.example.proyecto_libreria.R
 
 class AdaptadorCatalogo(private val listaLibros: List<LibroCatalogo>,
 
-private val contexto: CatalogoActivity,
-private val recyclerView: RecyclerView) : RecyclerView.Adapter<AdaptadorCatalogo.MyViewHolder>() {
+                        private val contexto: CatalogoActivity,
+                        private val recyclerView: RecyclerView) : RecyclerView.Adapter<AdaptadorCatalogo.MyViewHolder>() {
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var titulo: TextView
         var isbn: TextView

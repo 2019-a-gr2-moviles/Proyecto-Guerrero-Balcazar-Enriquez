@@ -1,10 +1,11 @@
-package com.example.proyecto_libreria
+package com.example.proyecto_libreria.Actividades
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.EditText
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -12,10 +13,13 @@ import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.beust.klaxon.Klaxon
+import com.example.proyecto_libreria.Adaptadores.AdaptadorCarrito
+import com.example.proyecto_libreria.Clases.Factura
+import com.example.proyecto_libreria.Clases.LibroCatalogo
+import com.example.proyecto_libreria.R
 import com.github.kittinunf.fuel.httpPost
 import com.github.kittinunf.result.Result
 import kotlinx.android.synthetic.main.activity_carrito.*
-import kotlinx.android.synthetic.main.content_catalogo.*
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -27,8 +31,9 @@ class CarritoActivity : AppCompatActivity() {
 
 
 
-        iniciarRVLibros(CatalogoActivity.objetoCompartido.listaCarrito, this, rv_carrito)
-        var resultadoRedondeado=Math.round(CatalogoActivity.objetoCompartido.totalPagar * 100) / 100.0
+
+        iniciarRVLibros(CatalogoActivity.listaCarrito, this, rv_carrito)
+        var resultadoRedondeado=Math.round(CatalogoActivity.totalPagar * 100) / 100.0
         txt_totalPagar.text= resultadoRedondeado.toString()
         //"%.2f".format(CatalogoActivity.objetoCompartido.totalPagar).toDouble()
 
@@ -41,7 +46,83 @@ class CarritoActivity : AppCompatActivity() {
         btn_comprar.setOnClickListener {
             dialogFactura()
         }
+        var toolbar: androidx.appcompat.widget.Toolbar = findViewById(R.id.toolbar)
+        this.setSupportActionBar(toolbar)
+        val actionBar = supportActionBar
+
+
+        // Set toolbar title/app title
+        actionBar!!.title = "Hello APP"
+
+        // Set action bar/toolbar sub title
+        actionBar.subtitle = "App subtitle"
+
+        // Set action bar elevation
+        actionBar.elevation = 4.0F
+
+        // Display the app icon in action bar/toolbar
+        actionBar.setDisplayShowHomeEnabled(true)
     }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle presses on the action bar menu items
+        when (item.itemId) {
+            R.id.action_locales -> {
+                irIntentRespuesta()
+                return true
+            }
+
+            R.id.action_catalogo -> {
+                if(MainActivity.permisoAdmin){
+                    irGestionLibros()
+                }else{
+                    Toast.makeText(applicationContext, "Opción sólo disponible para usuarios de tipo ADMINISTRADOR", Toast.LENGTH_SHORT).show()
+                }
+                return true
+            }
+            R.id.action_factura -> {
+                irIntentFactura()
+                return true
+            }
+//            R.id.action_paste -> {
+//                text_view.text = "Paste"
+//                return true
+//            }
+//            R.id.action_new -> {
+//                text_view.text = "New"
+//                return true
+//            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+    fun irIntentFactura() {
+        val intent = Intent(
+            this, FacturasClienteActivity::class.java
+        )
+
+        startActivity(intent);
+
+    }
+    fun irGestionLibros() {
+        val intent = Intent(
+            this, GestionLibrosActivity::class.java
+        )
+        startActivity(intent);
+    }
+    fun irIntentRespuesta() {
+        val intent = Intent(
+            this, MapsActivity::class.java
+        )
+
+        startActivity(intent);
+
+    }
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        // Inflate the menu to use in the action bar
+        val inflater = menuInflater
+        inflater.inflate(R.menu.main_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
     fun dialogFactura() {
 
         val builder = AlertDialog.Builder(this)
@@ -52,7 +133,7 @@ class CarritoActivity : AppCompatActivity() {
         val totalPagar = dialogLayout.findViewById<TextView>(R.id.dialog_factura_totalPagar)
         val numeroTarjeta = dialogLayout.findViewById<TextView>(R.id.dialog_factura_inputNumTarjeta)
 
-        totalPagar.setText(CatalogoActivity.objetoCompartido.totalPagar.toString())
+        totalPagar.setText(CatalogoActivity.totalPagar.toString())
 
 
 
@@ -67,7 +148,7 @@ class CarritoActivity : AppCompatActivity() {
         builder.show()
     }
     fun guardarFactura(numeroTarjeta:String){
-        var urlFactura="${MainActivity.objetoCompartido.url}/factura"
+        var urlFactura="${MainActivity.url}/factura"
         var x=Date()
 
 
@@ -80,8 +161,8 @@ class CarritoActivity : AppCompatActivity() {
               {
                 "numeroTarjeta": "${numeroTarjeta}",
                 "fecha" : "${formatter.format(x)}",
-                "total": ${CatalogoActivity.objetoCompartido.totalPagar},
-                "idUsuario": ${MainActivity.objetoCompartido.idUsuario}
+                "total": ${CatalogoActivity.totalPagar},
+                "idUsuario": ${MainActivity.idUsuario}
               }
             """
         urlFactura
@@ -96,7 +177,7 @@ class CarritoActivity : AppCompatActivity() {
                         var res= result.get()
                         Log.i("http", "TODO BIIIEN ${res.toString()}")
                         val facturaParseada = Klaxon().parse<Factura>(res)
-                        CatalogoActivity.objetoCompartido.listaCarrito.forEach {
+                        CatalogoActivity.listaCarrito.forEach {
                             crearDetalles(facturaParseada!!.id!!, it.id!!, it.cantidad!!)
                         }
                         Log.i("http", "TODO BIIIEN")
@@ -105,7 +186,7 @@ class CarritoActivity : AppCompatActivity() {
             }
     }
     fun crearDetalles(idFactura: Int, idLibro:Int, cantidad:Int){
-        var urlDetalle="${MainActivity.objetoCompartido.url}/detalle"
+        var urlDetalle="${MainActivity.url}/detalle"
         val bodyJson = """
               {
                 "idLibro": ${idLibro},
@@ -133,17 +214,19 @@ class CarritoActivity : AppCompatActivity() {
     }
     fun masLibro(indice: Int){
         CatalogoActivity.listaCarrito[indice].cantidad++
-        CatalogoActivity.objetoCompartido.totalPagar+=CatalogoActivity.listaCarrito[indice].precio
-        var resultadoRedondeado=Math.round(CatalogoActivity.objetoCompartido.totalPagar * 100) / 100.0
+        CatalogoActivity.totalPagar += CatalogoActivity.listaCarrito[indice].precio
+        var resultadoRedondeado=Math.round(CatalogoActivity.totalPagar * 100) / 100.0
         txt_totalPagar.text= resultadoRedondeado.toString()
-        iniciarRVLibros(CatalogoActivity.objetoCompartido.listaCarrito, this, rv_carrito)
+        iniciarRVLibros(CatalogoActivity.listaCarrito, this, rv_carrito)
     }
     fun menosLibro(indice: Int){
-        CatalogoActivity.listaCarrito[indice].cantidad++
-        CatalogoActivity.objetoCompartido.totalPagar-=CatalogoActivity.listaCarrito[indice].precio
-        var resultadoRedondeado=Math.round(CatalogoActivity.objetoCompartido.totalPagar * 100) / 100.0
-        txt_totalPagar.text= resultadoRedondeado.toString()
-        iniciarRVLibros(CatalogoActivity.objetoCompartido.listaCarrito, this, rv_carrito)
+        if (CatalogoActivity.listaCarrito[indice].cantidad != 0) {
+            CatalogoActivity.listaCarrito[indice].cantidad--
+            CatalogoActivity.totalPagar -= CatalogoActivity.listaCarrito[indice].precio
+            var resultadoRedondeado = Math.round(CatalogoActivity.totalPagar * 100) / 100.0
+            txt_totalPagar.text = resultadoRedondeado.toString()
+            iniciarRVLibros(CatalogoActivity.listaCarrito, this, rv_carrito)
+        }
     }
     fun irCatalogo(){
         val intent= Intent(
@@ -151,6 +234,7 @@ class CarritoActivity : AppCompatActivity() {
         )
         intent.putExtra("opcion", "recargar" )
         startActivity(intent);
+        finish()
     }
     fun iniciarRVLibros(lista: List<LibroCatalogo>, actividad: CarritoActivity, recycler_view: RecyclerView) {
         val adaptadorPlato = AdaptadorCarrito(lista, actividad, recycler_view)
@@ -163,8 +247,8 @@ class CarritoActivity : AppCompatActivity() {
     fun deleteCarrito(indice: Int){
 
         var libroCarrito= CatalogoActivity.listaCarrito[indice]
-        CatalogoActivity.totalPagar= CatalogoActivity.totalPagar-(libroCarrito.precio*libroCarrito.cantidad)
-        var resultadoRedondeado=Math.round(CatalogoActivity.objetoCompartido.totalPagar * 100) / 100.0
+        CatalogoActivity.totalPagar = CatalogoActivity.totalPagar -(libroCarrito.precio*libroCarrito.cantidad)
+        var resultadoRedondeado=Math.round(CatalogoActivity.totalPagar * 100) / 100.0
         txt_totalPagar.text= resultadoRedondeado.toString()
         CatalogoActivity.listaLibros.add(libroCarrito)
         CatalogoActivity.listaCarrito.remove(libroCarrito)
