@@ -65,7 +65,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             PolylineOptions()
                 .clickable(true).add(
                     local1,
-                    LatLng(-0.208218, -78.490163)
+                    local2
 
                 )
         )
