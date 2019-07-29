@@ -5,7 +5,7 @@
     <color name="colorAccent">#8b6b61</color>
     <color name="colorBlanco">#FFFFFF</color>
 
-    <color name="colorCafeClaro">#8b6b61</color>
+    <color name="colorCafeClaro">#8B6B61</color>
     <color name="colorCafeMedio">#5D4037</color>
     <color name="colorCafeOscuro">#321911</color>
 </resources>

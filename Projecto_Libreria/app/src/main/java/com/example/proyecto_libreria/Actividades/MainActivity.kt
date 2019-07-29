@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
     companion object objetoCompartido {
         //var url = "http://172.29.52.56:1337"
         //var url = "http://172.29.47.25:1337"
-        var url = "http://192.168.200.5:1337";
+        var url = "http://192.168.1.102:1337";
         var nombreUsuario = ""
         var idUsuario =-1
         var permisoAdmin=true
